@@ -280,7 +280,7 @@ class TemperatureMixerLight(LightGroup, RestoreSensor):
 
         _LOGGER.debug(
             "%s: invoking turn_off for the light group",
-            self._cached_fiendly_name
+            self._cached_friendly_name
         )
         await super().async_turn_off(**kwargs)
 
@@ -298,7 +298,7 @@ class TemperatureMixerLight(LightGroup, RestoreSensor):
         self._attr_native_value = json.dumps(self.previous_turn_on_state)
         _LOGGER.debug(
             "%s: saving serialized state: %s",
-            self._cached_fiendly_name,
+            self._cached_friendly_name,
             self.previous_turn_on_state,
         )
 
@@ -315,7 +315,7 @@ class TemperatureMixerLight(LightGroup, RestoreSensor):
 
             _LOGGER.debug(
                 "%s: forward turn_on: %s %s",
-                self._cached_fiendly_name,
+                self._cached_friendly_name,
                 target,
                 service_data,
             )
